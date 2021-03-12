@@ -11,8 +11,9 @@ public class Player : MonoBehaviour
     //布林值 bool true是、false否
     //字串 string
     [Header("等級")]
+    [Tooltip("這是角色的等級")]
     public int Lv = 1;
-    [Range(0,300)]
+    [Header("移動速度"),Range(0,300)]
     public float speed = 10.5f;
     public bool isDead = false;
     [Tooltip("這是角色的名稱")]
