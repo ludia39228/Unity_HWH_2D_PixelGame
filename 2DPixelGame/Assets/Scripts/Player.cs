@@ -2,8 +2,8 @@
 
 public class Player : MonoBehaviour
 {
-    //類型 名稱;
-    int Lv;
+    //修飾詞 類型 名稱(指定值);
+    public int Lv;
 
 
 
