@@ -21,6 +21,8 @@ public class Player : MonoBehaviour
     public string cName = "貓咪";
     [Header("虛擬搖桿")]
     public FixedJoystick joystick;
+    [Header("變形元件")]
+    public Transform tra;
 
     //方法語法 Method-儲存複雜的程式區塊或演算法
     //修飾詞 類型 名稱(){程式區塊或演算法}
@@ -39,6 +41,8 @@ public class Player : MonoBehaviour
 
         float v = joystick.Vertical;
         print("垂直:" + v);
+
+        tra.Translate(3, 0, 0);
     }
     private void Attack()
     {
