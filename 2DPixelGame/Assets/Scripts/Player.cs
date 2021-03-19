@@ -23,9 +23,13 @@ public class Player : MonoBehaviour
     //方法語法 Method-儲存複雜的程式區塊或演算法
     //修飾詞 類型 名稱(){程式區塊或演算法}
     //void無類型
+    /// <summary>
+    /// 移動
+    /// </summary>
+
     private void Move()
     {
-        
+        print("移動");
     }
     private void Attack()
     {
@@ -44,12 +48,14 @@ public class Player : MonoBehaviour
     //開始事件：撥放後執行一次
     private void Start()
     {
-        //輸入(任何類型資料)
-        print("嗨~");
+        //呼叫方法
+        //方法名稱();
+        Move();
     }
     //更新事件：大約一秒執行六十次 60FPS
     private void Update()
     {
-        print("哈囉~");
+        Move();
+
     }
 }
