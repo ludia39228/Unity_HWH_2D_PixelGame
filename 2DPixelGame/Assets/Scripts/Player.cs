@@ -33,6 +33,12 @@ public class Player : MonoBehaviour
     private void Move()
     {
         print("移動");
+
+        float h = joystick.Horizontal;
+        print("水平:" + h);
+
+        float v = joystick.Vertical;
+        print("垂直:" + v);
     }
     private void Attack()
     {
