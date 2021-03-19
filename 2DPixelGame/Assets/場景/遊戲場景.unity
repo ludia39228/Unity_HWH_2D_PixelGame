@@ -22111,11 +22111,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Lv: 0
-  speed: 10.5
+  speed: 12
   isDead: 0
   cName: "\u8C93\u54AA"
   joystick: {fileID: 75406202}
   tra: {fileID: 1497034117}
+  ani: {fileID: 1497034118}
 --- !u!50 &1497034120
 Rigidbody2D:
   serializedVersion: 4
@@ -22164,6 +22165,7 @@ GameObject:
   - component: {fileID: 1497212715}
   - component: {fileID: 1497212717}
   - component: {fileID: 1497212716}
+  - component: {fileID: 1497212718}
   m_Layer: 0
   m_Name: "\u57CE\u7246\u6700\u5E95\u5C64"
   m_TagString: Untagged
@@ -22794,6 +22796,22 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!19719996 &1497212718
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1497212714}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0.00001
 --- !u!1001 &1609025945
 PrefabInstance:
   m_ObjectHideFlags: 0
