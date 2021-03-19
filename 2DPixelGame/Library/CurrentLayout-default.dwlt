@@ -879,10 +879,10 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
-      m_ExpandedIDs: 5efbffff
+      scrollPos: {x: 0, y: 391}
+      m_SelectedIDs: ca390000
+      m_LastClickedID: 14794
+      m_ExpandedIDs: 5efbffff6e390000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 

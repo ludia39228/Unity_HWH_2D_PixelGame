@@ -19,10 +19,13 @@ public class Player : MonoBehaviour
     public bool isDead = false;
     [Header("角色名稱"),Tooltip("這是角色的名稱")]
     public string cName = "貓咪";
+    [Header("虛擬搖桿")]
+    public FixedJoystick joystick;
 
     //方法語法 Method-儲存複雜的程式區塊或演算法
     //修飾詞 類型 名稱(){程式區塊或演算法}
     //void無類型
+
     /// <summary>
     /// 移動
     /// </summary>
