@@ -47,4 +47,9 @@ public class Player : MonoBehaviour
         //輸入(任何類型資料)
         print("嗨~");
     }
+    //更新事件：大約一秒執行六十次 60FPS
+    private void Update()
+    {
+        print("哈囉~");
+    }
 }
