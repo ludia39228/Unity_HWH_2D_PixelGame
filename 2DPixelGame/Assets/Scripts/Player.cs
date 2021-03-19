@@ -34,15 +34,13 @@ public class Player : MonoBehaviour
 
     private void Move()
     {
-        print("移動");
-
+        
         float h = joystick.Horizontal;
-        print("水平:" + h);
-
         float v = joystick.Vertical;
-        print("垂直:" + v);
+       
 
-        tra.Translate(3, 0, 0);
+        //變形元件,位移(水平*速度*一幀的時間,垂直*速度*一幀的時間,0)
+        tra.Translate(h*speed*Time.deltaTime,v*speed*Time.deltaTime, 0);
     }
     private void Attack()
     {
@@ -63,7 +61,7 @@ public class Player : MonoBehaviour
     {
         //呼叫方法
         //方法名稱();
-        Move();
+       
     }
     //更新事件：大約一秒執行六十次 60FPS
     private void Update()
