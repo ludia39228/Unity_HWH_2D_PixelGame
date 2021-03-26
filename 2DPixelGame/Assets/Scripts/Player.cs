@@ -65,7 +65,10 @@ public class Player : MonoBehaviour
         print("攻擊");
 
         //2D物理 圓形碰撞(中心點,半徑,方向)
-        Physics2D.CircleCast(transform.position, rangeAttack, -transform.up);
+        RaycastHit2D hit =Physics2D.CircleCast(transform.position, rangeAttack, -transform.up);
+
+        print("碰到的物件：" + hit.collider.name);
+
     }
     private void Hit()
     {
