@@ -27,9 +27,10 @@ public class CameraControl : MonoBehaviour
         Vector3 posCam = transform.position;   //取得 攝影機座標
         Vector3 posPla = player.position;      //取得 玩家座標
 
-        posCam = Vector3.Lerp(posCam, posPla, 0.5f);
+        posCam = Vector3.Lerp(posCam, posPla, 0.5f*speed*Time.deltaTime);
+        posCam.z = -10;
 
-        print(posCam);
+        transform.position = posCam;         //更新攝影機的座標
 
     }
 
