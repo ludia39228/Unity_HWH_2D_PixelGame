@@ -1668,6 +1668,7 @@ MonoBehaviour:
   speed: 1.5
   "limit\uFF39": {x: -5, y: 5}
   "limit\uFF38": {x: -5, y: 5}
+  player: {fileID: 1497034117}
 --- !u!1001 &662135458
 PrefabInstance:
   m_ObjectHideFlags: 0
