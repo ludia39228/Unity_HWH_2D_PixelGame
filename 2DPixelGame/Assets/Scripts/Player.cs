@@ -27,6 +27,10 @@ public class Player : MonoBehaviour
     public Animator ani;
     [Header("偵測範圍")]
     public float rangeAttack = 2.5f;
+    [Header("音效來源")]
+    public AudioSource aud;
+    [Header("攻擊音效")]
+    public AudioClip soundAttack;
 
     //事件：繪製圖示
     private void OnDrawGizmos()
@@ -62,7 +66,9 @@ public class Player : MonoBehaviour
     //要被按鈕呼叫必須設定為公開 public
     public void Attack()
     {
-        print("攻擊");
+
+        //音效來源,撥放一次(音效片段,音量)
+        aud.PlayOneShot(soundAttack, 0.5f);
 
         //2D物理 圓形碰撞(中心點,半徑,方向,距離,圖層編號)
         RaycastHit2D hit =Physics2D.CircleCast(transform.position, rangeAttack, -transform.up,0,1<<8);
