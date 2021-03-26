@@ -30,6 +30,11 @@ public class CameraControl : MonoBehaviour
         posCam = Vector3.Lerp(posCam, posPla, 0.5f*speed*Time.deltaTime);
         posCam.z = -10;
 
+        //Mathf.Clamp(要夾住的值,最小值,最大值)
+
+        posCam.x=Mathf.Clamp(posCam.x, limitＸ.x, limitＸ.y);
+        posCam.y = Mathf.Clamp(posCam.y,limitＹ.x,limitＹ.y);
+
         transform.position = posCam;         //更新攝影機的座標
 
     }

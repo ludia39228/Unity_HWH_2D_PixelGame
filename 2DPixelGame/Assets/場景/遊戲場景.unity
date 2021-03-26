@@ -1665,7 +1665,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 125b4a5117ce91c43ad8a057050d19db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1.5
+  speed: 10
   "limit\uFF39": {x: -5, y: 5}
   "limit\uFF38": {x: -5, y: 5}
   player: {fileID: 1497034117}
