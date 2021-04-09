@@ -100,4 +100,9 @@ public class Player : MonoBehaviour
         Move();
 
     }
+    //觸發事件-進入:兩個物件必須有一個勾選 Is Trigger
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        print(collision.gameObject);
+    }
 }
