@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI; //引用 介面API
 
 public class Player : MonoBehaviour
 {
@@ -102,6 +103,9 @@ public class Player : MonoBehaviour
     }
     [Header("吃金塊音效")]
     public AudioClip soundEat;
+    [Header("金幣數量")]
+    public Text textCoin;
+
 
     private int coin;
 
@@ -114,6 +118,7 @@ public class Player : MonoBehaviour
         coin++;
         aud.PlayOneShot(soundEat);
         Destroy(collision.gameObject);
+        textCoin.text = "金幣:" + coin;
         }
     }
 }
