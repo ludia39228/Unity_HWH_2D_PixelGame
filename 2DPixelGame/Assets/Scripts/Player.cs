@@ -100,9 +100,20 @@ public class Player : MonoBehaviour
         Move();
 
     }
+    [Header("吃金塊音效")]
+    public AudioClip soundEat;
+
+    private int coin;
+
+
     //觸發事件-進入:兩個物件必須有一個勾選 Is Trigger
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        print(collision.gameObject);
+        if(collision.tag == "金塊")
+        { 
+        coin++;
+        aud.PlayOneShot(soundEat);
+        Destroy(collision.gameObject);
+        }
     }
 }
