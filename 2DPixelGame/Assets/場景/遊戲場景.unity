@@ -1459,6 +1459,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rangeTrack: 3
+  speed: 0.1
 --- !u!1001 &396836228
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -4,6 +4,11 @@ public class Enemy : MonoBehaviour
 {
     [Header("追蹤範圍"), Range(0, 500)]
     public float rangeTrack = 2;
+    [Header("移動速度"), Range(0, 50)]
+    public float speed = 2;
+    [Header("攻擊範圍"), Range(0, 50)]
+    public float rangeAttack = 0.5f;
+    
 
     private Transform player;
 
@@ -20,6 +25,8 @@ public class Enemy : MonoBehaviour
         //繪製球體(中心點,半徑)
         Gizmos.DrawSphere(transform.position, rangeTrack);
 
+        Gizmos.color = new Color(1, 0, 0, 0.3f);
+        Gizmos.DrawSphere(transform.position, rangeAttack);
 
     }
 
@@ -39,7 +46,8 @@ public class Enemy : MonoBehaviour
         //如果 距離 小於等於 追蹤範圍 才開始追蹤
         if(dis<=rangeTrack)
         {
-            print("追蹤");
+            //物件 的 座標 更新為 三維向量 的 往前移動(物件 的 座標,目標 的座標,速度*一幀的時間)
+           transform.position= Vector3.MoveTowards(transform.position, player.position,speed*Time.deltaTime);
         }
     }
 
