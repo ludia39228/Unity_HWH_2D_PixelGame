@@ -75,7 +75,7 @@ public class Enemy : MonoBehaviour
         //如果 計時器 大於等於 冷卻時間 就攻擊
         if(timer>=cdAttack)
         {
-            timer = 0;
+            timer = 0;        //計時器 歸零 
             psAttack.Play();  //播放 攻擊特效
         }
         
