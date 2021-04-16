@@ -18,6 +18,11 @@ public class Enemy : MonoBehaviour
 
     private Transform player;
 
+    /// <summary>
+    /// 計時器
+    /// </summary>
+    private float timer;
+
     private void Start()
     {
         player = GameObject.Find("人物").transform;
@@ -65,7 +70,15 @@ public class Enemy : MonoBehaviour
 
     private void Attack()
     {
-        psAttack.Play();  //播放 攻擊特效
+        timer += Time.deltaTime;  //累加時間
+
+        //如果 計時器 大於等於 冷卻時間 就攻擊
+        if(timer>=cdAttack)
+        {
+            timer = 0;
+            psAttack.Play();  //播放 攻擊特效
+        }
+        
     }
 
 }
