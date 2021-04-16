@@ -8,6 +8,12 @@ public class Enemy : MonoBehaviour
     public float speed = 2;
     [Header("攻擊範圍"), Range(0, 50)]
     public float rangeAttack = 0.5f;
+    [Header("攻擊特效")]
+    public ParticleSystem psAttack;
+    [Header("攻擊冷卻時間"), Range(0, 10)]
+    public float cdAttack = 3;
+    [Header("攻擊力"), Range(0, 1000)]
+    public float attack = 20;
     
 
     private Transform player;
@@ -43,12 +49,23 @@ public class Enemy : MonoBehaviour
         //距離 等於 三維向量 的 距離(A點,B點)
         float dis = Vector3.Distance(transform.position, player.position);
 
+        //如果 距離 小於等於 攻擊範圍 才開始追蹤
         //如果 距離 小於等於 追蹤範圍 才開始追蹤
-        if(dis<=rangeTrack)
+        if(dis<=rangeAttack)
+        {
+            Attack();
+        }
+
+        else if (dis<=rangeTrack)
         {
             //物件 的 座標 更新為 三維向量 的 往前移動(物件 的 座標,目標 的座標,速度*一幀的時間)
            transform.position= Vector3.MoveTowards(transform.position, player.position,speed*Time.deltaTime);
         }
+    }
+
+    private void Attack()
+    {
+        psAttack.Play();  //播放 攻擊特效
     }
 
 }
