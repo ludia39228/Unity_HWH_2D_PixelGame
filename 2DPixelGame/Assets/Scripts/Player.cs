@@ -34,6 +34,8 @@ public class Player : MonoBehaviour
     public AudioClip soundAttack;
     [Header("血量")]
     public float hp=200;
+    [Header("血條系統")]
+    public HpManager hpManager;
 
     private float hpMax;
 
@@ -82,9 +84,10 @@ public class Player : MonoBehaviour
         if (hit && hit.collider.tag == "道具") hit.collider.GetComponent<Item>().DropProp(); 
 
     }
-    private void Hit()
+    private void Hit(float damage)
     {
-
+        hp -= damage;     //扣除傷害值
+        hpManager.UpdateHpBar(hp, hpMax); //更新血條
     }
     private void Dead()
     {
