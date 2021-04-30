@@ -32,6 +32,10 @@ public class Player : MonoBehaviour
     public AudioSource aud;
     [Header("攻擊音效")]
     public AudioClip soundAttack;
+    [Header("血量")]
+    public float hp=200;
+
+    private float hpMax;
 
     //事件：繪製圖示
     private void OnDrawGizmos()
@@ -91,13 +95,14 @@ public class Player : MonoBehaviour
     //開始事件：撥放後執行一次
     private void Start()
     {
-        //呼叫方法
-        //方法名稱();
+        hpMax = hp;
        
     }
     //更新事件：大約一秒執行六十次 60FPS
     private void Update()
     {
+        //呼叫方法
+        //方法名稱();
         Move();
 
     }
