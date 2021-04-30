@@ -21,7 +21,8 @@ public class HpManager : MonoBehaviour
     }
     public IEnumerator ShowDamage()
     {
-
+        RectTransform rect = Instantiate(rectDamage, transform);   //生成傷害數值在血條系統內
+        rect.anchoredPosition = new Vector2(0, 200);               //指定座標
     }    
 
 }
