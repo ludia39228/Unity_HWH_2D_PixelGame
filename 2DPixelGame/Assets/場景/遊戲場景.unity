@@ -27499,7 +27499,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bar: {fileID: 1782681968}
-  rectDamage: {fileID: 0}
+  rectDamage: {fileID: 9029454371184414381, guid: 94f9a4fc3edf87c4b82be018ae65b751,
+    type: 3}
 --- !u!1 &1497034115
 GameObject:
   m_ObjectHideFlags: 0
