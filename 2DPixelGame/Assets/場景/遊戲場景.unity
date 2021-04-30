@@ -1346,7 +1346,7 @@ MonoBehaviour:
   speed: 0.5
   rangeAttack: 0.5
   psAttack: {fileID: 707400594}
-  cdAttack: 3
+  cdAttack: 2
   attack: 20
 --- !u!1001 &396836228
 PrefabInstance:

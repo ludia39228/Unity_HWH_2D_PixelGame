@@ -94,6 +94,7 @@ public class Player : MonoBehaviour
     {
         hp -= damage;     //扣除傷害值
         hpManager.UpdateHpBar(hp, hpMax); //更新血條
+        StartCoroutine(hpManager.ShowDamage());
     }
     private void Dead()
     {
