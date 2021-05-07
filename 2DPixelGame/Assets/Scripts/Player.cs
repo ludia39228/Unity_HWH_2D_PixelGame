@@ -17,8 +17,6 @@ public class Player : MonoBehaviour
     public int Lv = 1;
     [Header("移動速度"),Range(0,300)]
     public float speed = 10.5f;
-    [Header("角色是否死亡" )]
-    public bool isDead = false;
     [Header("角色名稱"),Tooltip("這是角色的名稱")]
     public string cName = "貓咪";
     [Header("虛擬搖桿")]
@@ -39,7 +37,10 @@ public class Player : MonoBehaviour
     public HpManager hpManager;
     [Header("攻擊力"), Range(0, 1000)]
     public float attack = 20;
+    [Header("等級文字")]
+    public Text textLv;
 
+    private bool isDead = false;
     private float hpMax;
 
     //事件：繪製圖示
