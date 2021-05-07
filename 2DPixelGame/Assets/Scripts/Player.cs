@@ -99,6 +99,9 @@ public class Player : MonoBehaviour
 
         if (hp <= 0)Dead() ;                        //如果血量<=0就死亡
     }
+   /// <summary>
+   /// 死亡
+   /// </summary>
     private void Dead()
     {
         hp = 0;
@@ -119,7 +122,7 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        hpMax = hp;           //取得血量最大值
+        hpMax = hp;               //取得血量最大值
        
     }
     //更新事件：大約一秒執行六十次 60FPS
