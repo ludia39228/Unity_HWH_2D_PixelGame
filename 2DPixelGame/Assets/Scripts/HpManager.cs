@@ -32,6 +32,7 @@ public class HpManager : MonoBehaviour
             rect.anchoredPosition= new Vector2(0, y);              //更新座標
             yield return new WaitForSeconds(0.02f);                //等待幾秒(秒數)
         }
+        Destroy(rect.gameObject, 0.5f);                              //刪除傷害數值物件
     }    
 
 }
