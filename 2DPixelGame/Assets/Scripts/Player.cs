@@ -58,7 +58,7 @@ public class Player : MonoBehaviour
 
     private void Move()
     {
-        
+        if (isDead) return;                         //如果死亡就跳出
         float h = joystick.Horizontal;
         float v = joystick.Vertical;
        
@@ -73,7 +73,7 @@ public class Player : MonoBehaviour
     //要被按鈕呼叫必須設定為公開 public
     public void Attack()
     {
-
+        if (isDead) return;                         //如果死亡就跳出
         //音效來源,撥放一次(音效片段,音量)
         aud.PlayOneShot(soundAttack, 0.5f);
 
@@ -92,13 +92,16 @@ public class Player : MonoBehaviour
     /// <param name="damage">接收到的傷害值</param>
     public void Hit(float damage)
     {
-        hp -= damage;     //扣除傷害值
-        hpManager.UpdateHpBar(hp, hpMax); //更新血條
+        hp -= damage;                               //扣除傷害值
+        hpManager.UpdateHpBar(hp, hpMax);           //更新血條
         StartCoroutine(hpManager.ShowDamage(damage));
+
+        if (hp <= 0)Dead() ;                        //如果血量<=0就死亡
     }
     private void Dead()
     {
-
+        hp = 0;
+        isDead = true;
     }
 
     //事件-特定時間會執行的方法

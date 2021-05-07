@@ -1347,7 +1347,7 @@ MonoBehaviour:
   rangeAttack: 0.5
   psAttack: {fileID: 707400594}
   cdAttack: 2
-  attack: 20
+  attack: 1000
 --- !u!1001 &396836228
 PrefabInstance:
   m_ObjectHideFlags: 0
