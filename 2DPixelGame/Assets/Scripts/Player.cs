@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
-using UnityEngine.UI; //引用 介面API
+using UnityEngine.UI;                 //引用 介面API
+using UnityEngine.SceneManagement;    //引用 場景管理API
 
 public class Player : MonoBehaviour
 {
@@ -102,13 +103,23 @@ public class Player : MonoBehaviour
     {
         hp = 0;
         isDead = true;
+        Invoke("Replay", 2);                       //延遲呼叫("方法名稱",延遲時間)
     }
 
     //事件-特定時間會執行的方法
     //開始事件：撥放後執行一次
+    /// <summary>
+    /// 重新遊戲
+    /// </summary>
+    private void Replay()
+    {
+        SceneManager.LoadScene("遊戲場景");
+    }
+
+
     private void Start()
     {
-        hpMax = hp;
+        hpMax = hp;           //取得血量最大值
        
     }
     //更新事件：大約一秒執行六十次 60FPS
