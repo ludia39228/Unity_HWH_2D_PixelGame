@@ -37,6 +37,8 @@ public class Player : MonoBehaviour
     public float hp=200;
     [Header("血條系統")]
     public HpManager hpManager;
+    [Header("攻擊力"), Range(0, 1000)]
+    public float attack = 20;
 
     private float hpMax;
 
@@ -82,7 +84,9 @@ public class Player : MonoBehaviour
         RaycastHit2D hit =Physics2D.CircleCast(transform.position, rangeAttack, -transform.up,0,1<<8);
 
         //如果 碰到物件存在 並且 碰到的物件 標籤 為道具 就取得道具腳本並呼叫掉落道具方法
-        if (hit && hit.collider.tag == "道具") hit.collider.GetComponent<Item>().DropProp(); 
+        if (hit && hit.collider.tag == "道具") hit.collider.GetComponent<Item>().DropProp();
+        //如果 打到的標籤是敵人 就對他造成傷害
+        if (hit && hit.collider.tag == "敵人") hit.collider.GetComponent<Enemy>().Hit(attack);
 
     }
 

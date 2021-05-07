@@ -63,6 +63,7 @@ public class Enemy : MonoBehaviour
     /// </summary>
     private void Track()
     {
+        if (isDead) return;
         //距離 等於 三維向量 的 距離(A點,B點)
         float dis = Vector3.Distance(transform.position, player.position);
 
@@ -89,7 +90,9 @@ public class Enemy : MonoBehaviour
         {
             timer = 0;        //計時器 歸零 
             psAttack.Play();  //播放 攻擊特效
-            Collider2D hit =Physics2D.OverlapCircle(transform.position, rangeAttack);
+            //2D碰撞=2D物理.覆蓋圖形範圍(中心點,半徑,圖層)
+            Collider2D hit =Physics2D.OverlapCircle(transform.position, rangeAttack,1<<9);
+            //碰到的物件 取得元件<玩家>().受傷(攻擊力)
             hit.GetComponent<Player>().Hit(attack);
         }
         
@@ -114,6 +117,6 @@ public class Enemy : MonoBehaviour
     {
         hp = 0;
         isDead = true;
-        Invoke("Replay", 2);                       //延遲呼叫("方法名稱",延遲時間)
+        Destroy(gameObject,1.5f);                       //延遲呼叫("方法名稱",延遲時間)
     }
 }
