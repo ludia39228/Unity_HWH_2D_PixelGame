@@ -22984,7 +22984,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cde1e3beb4863b644aa904577e8c5b1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Lv: 0
+  Lv: 1
   speed: 10
   cName: "\u8C93\u54AA"
   joystick: {fileID: 75406202}
@@ -22995,7 +22995,7 @@ MonoBehaviour:
   soundAttack: {fileID: 8300000, guid: 67ed12ac5585b8b4286f55ccd20367ae, type: 3}
   hp: 200
   hpManager: {fileID: 1486709175}
-  attack: 20
+  attack: 100
   textLv: {fileID: 1109073307}
   imgExp: {fileID: 1012643226}
   soundEat: {fileID: 8300000, guid: 43633a18ec1a6d64f995d0108afb8f84, type: 3}

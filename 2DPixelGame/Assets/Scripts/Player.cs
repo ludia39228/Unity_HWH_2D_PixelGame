@@ -134,7 +134,7 @@ public class Player : MonoBehaviour
     /// <summary>
     /// 需要多少經驗值才會升等，一等設定為100
     /// </summary>
-    private float expNeed = 100;
+    private float expNeed = 50;
     [Header("經驗值吧條")]
     public Image imgExp;
 
@@ -148,6 +148,15 @@ public class Player : MonoBehaviour
         exp += getExp;
         print("經驗值:" + exp);
         imgExp.fillAmount = exp / expNeed;
+
+        //升級
+        if(exp>=expNeed)                              //如果 經驗值>=經驗需求 ex 120>100
+        { 
+            Lv++;                                     //升級 ax 2
+            textLv.text = "Lv" + Lv;                  //介面更新 ex Lv2
+            exp -= expNeed;                           //將多餘的經驗值補回來 ex 120-100=20
+            imgExp.fillAmount = exp / expNeed;        //介面更新
+        }
     }
     #endregion
 
