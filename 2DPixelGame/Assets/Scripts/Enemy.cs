@@ -118,8 +118,11 @@ public class Enemy : MonoBehaviour
     /// </summary>
     private void Dead()
     {
+        if (isDead) return;                             //如果 死亡 就退出
         hp = 0;
         isDead = true;
         Destroy(gameObject,1.5f);                       //延遲呼叫("方法名稱",延遲時間)
+        _player.Exp(exp);                               //將經驗值傳給玩家
     }
+
 }

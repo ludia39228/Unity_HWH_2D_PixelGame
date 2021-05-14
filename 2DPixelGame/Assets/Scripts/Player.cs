@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     //浮點數 float
     //布林值 bool true是、false否
     //字串 string
+    #region 欄位
     [Header("等級")]
     [Tooltip("這是角色的等級")]
     public int Lv = 1;
@@ -51,6 +52,10 @@ public class Player : MonoBehaviour
         //繪製圖示 球體(中心點,半徑)
         Gizmos.DrawSphere(transform.position, rangeAttack);
     }
+   
+   
+    #region 方法
+    
 
     //方法語法 Method-儲存複雜的程式區塊或演算法
     //修飾詞 類型 名稱(){程式區塊或演算法}
@@ -124,6 +129,7 @@ public class Player : MonoBehaviour
         SceneManager.LoadScene("遊戲場景");
     }
 
+    #endregion
 
     private void Start()
     {
@@ -157,5 +163,16 @@ public class Player : MonoBehaviour
         Destroy(collision.gameObject);
         textCoin.text = "金幣:" + coin;
         }
+    }
+    #endregion
+    /// <summary>
+    /// 經驗值控制
+    /// </summary>
+    /// <param name="getExp">接收到的經驗值</param>
+    private float exp;
+    public void Exp(float getExp)
+    {
+        exp += getExp;
+        print("經驗值:" + exp);
     }
 }
