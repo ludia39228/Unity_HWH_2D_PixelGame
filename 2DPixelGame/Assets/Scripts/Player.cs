@@ -170,6 +170,8 @@ public class Player : MonoBehaviour
             textLv.text = "Lv" + Lv;                  //介面更新 ex Lv2
             exp -= expNeed;                           //將多餘的經驗值補回來 ex 120-100=20
             imgExp.fillAmount = exp / expNeed;        //介面更新
+            expNeed = expData.exp[Lv - 1];
+       
         }
     }
     
