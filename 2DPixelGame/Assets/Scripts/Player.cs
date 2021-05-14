@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;                 //引用 介面API
-using UnityEngine.SceneManagement;    //引用 場景管理API
+using UnityEngine.UI;                                 //引用 介面API
+using UnityEngine.SceneManagement;                    //引用 場景管理API
 
 public class Player : MonoBehaviour
 {
@@ -164,17 +164,30 @@ public class Player : MonoBehaviour
         //語法：
         //while (布林值)［布林值　為 true時持續執行］
         //if（布林值）［布林值］　為true時執行一次］
-        while(exp>=expNeed)                              //如果 經驗值>=經驗需求 ex 120>100
+        while(exp>=expNeed)                           //如果 經驗值>=經驗需求 ex 120>100
         { 
             Lv++;                                     //升級 ax 2
             textLv.text = "Lv" + Lv;                  //介面更新 ex Lv2
             exp -= expNeed;                           //將多餘的經驗值補回來 ex 120-100=20
             imgExp.fillAmount = exp / expNeed;        //介面更新
             expNeed = expData.exp[Lv - 1];
-       
+            Leve1Up();                                //呼叫升級方法
         }
     }
-    
+    /// <summary>
+    /// 升級後的數據更新，攻擊力與血量，升級後恢復血量
+    /// </summary>
+    private void Leve1Up()
+    {
+        //攻擊力每一等提升 10
+        attack = 20 + (Lv - 1) * 10;
+        //血量每一等提升50
+        hpMax = 200 + (Lv - 1) * 50;
+
+        hp = hpMax;                                   //恢復血量全滿
+        hpManager.UpdateHpBar(hp, hpMax);             //更新血條
+    }
+
     [Header("經驗值資料")]
     public ExpData expData;
 
@@ -185,7 +198,7 @@ public class Player : MonoBehaviour
     //開始事件：撥放後會執行一次
     private void Start()
     {
-        hpMax = hp;                                       //取得血量最大值
+        hpMax = hp;                                   //取得血量最大值
         //利用公式寫入經驗值資料,一等100,兩等200....
         for (int i = 0; i <99; i++)
         {
