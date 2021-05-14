@@ -32,6 +32,10 @@ public class Player : MonoBehaviour
     public AudioSource aud;
     [Header("攻擊音效")]
     public AudioClip soundAttack;
+    [Header("吃金塊音效")]
+    public AudioClip soundEat;
+    [Header("金幣數量")]
+    public Text textCoin;
     [Header("血量")]
     public float hp=200;
     [Header("血條系統")]
@@ -43,6 +47,7 @@ public class Player : MonoBehaviour
 
     private bool isDead = false;
     private float hpMax;
+    private int coin;
 
     //事件：繪製圖示
     private void OnDrawGizmos()
@@ -134,9 +139,10 @@ public class Player : MonoBehaviour
     /// <summary>
     /// 需要多少經驗值才會升等，一等設定為100
     /// </summary>
-    private float expNeed = 50;
+    private float expNeed = 100;
     [Header("經驗值吧條")]
     public Image imgExp;
+
 
     /// <summary>
     /// 經驗值控制
@@ -158,14 +164,27 @@ public class Player : MonoBehaviour
             imgExp.fillAmount = exp / expNeed;        //介面更新
         }
     }
+    [Header("經驗值資料")]
+    public ExpData expData;
+
     #endregion
 
+
     #region 事件
+    //事件 - 特定時間會執行的方法
+    //開始事件：撥放後會執行一次
     private void Start()
     {
-        hpMax = hp;               //取得血量最大值
-       
+        hpMax = hp;                                       //取得血量最大值
+        //利用公式寫入經驗值資料,一等100,兩等200....
+        for (int i = 0; i <99; i++)
+        {
+            //經驗值資料的經驗值陣列[編號]=公式
+            //公式：(編號+1)*100 每等增加100
+            expData.exp[i] = (i + 1) * 100;
+        }
     }
+    
     //更新事件：大約一秒執行六十次 60FPS
     private void Update()
     {
@@ -173,14 +192,7 @@ public class Player : MonoBehaviour
         //方法名稱();
         Move();
 
-    }
-    [Header("吃金塊音效")]
-    public AudioClip soundEat;
-    [Header("金幣數量")]
-    public Text textCoin;
-
-
-    private int coin;
+    }  
 
 
     //觸發事件-進入:兩個物件必須有一個勾選 Is Trigger
