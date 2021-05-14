@@ -128,9 +128,30 @@ public class Player : MonoBehaviour
     {
         SceneManager.LoadScene("遊戲場景");
     }
-
     #endregion
 
+    private float exp;
+    /// <summary>
+    /// 需要多少經驗值才會升等，一等設定為100
+    /// </summary>
+    private float expNeed = 100;
+    [Header("經驗值吧條")]
+    public Image imgExp;
+
+    /// <summary>
+    /// 經驗值控制
+    /// </summary>
+    /// <param name="getExp">接收到的經驗值</param>
+
+    public void Exp(float getExp)
+    {
+        exp += getExp;
+        print("經驗值:" + exp);
+        imgExp.fillAmount = exp / expNeed;
+    }
+    #endregion
+
+    #region 事件
     private void Start()
     {
         hpMax = hp;               //取得血量最大值
@@ -164,15 +185,6 @@ public class Player : MonoBehaviour
         textCoin.text = "金幣:" + coin;
         }
     }
+
     #endregion
-    /// <summary>
-    /// 經驗值控制
-    /// </summary>
-    /// <param name="getExp">接收到的經驗值</param>
-    private float exp;
-    public void Exp(float getExp)
-    {
-        exp += getExp;
-        print("經驗值:" + exp);
-    }
 }
