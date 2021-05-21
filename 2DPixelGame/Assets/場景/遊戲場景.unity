@@ -2739,7 +2739,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1264268121}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1979081292}
+        m_MethodName: ChooseWeapon
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &683031197
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3013,7 +3024,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 369975166}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1979081292}
+        m_MethodName: ChooseWeapon
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &791293209
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25440,7 +25462,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1412123449}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1979081292}
+        m_MethodName: ChooseWeapon
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1566621566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26516,6 +26549,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objShop: {fileID: 1116661984}
+  indexWeapon: 0
 --- !u!70 &1979081293
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

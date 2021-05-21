@@ -32,8 +32,12 @@ public class NPC : MonoBehaviour
     }
 
 
-    ///玩家選了哪一個武器
-   public void ChooseWeapon(int choose)
+    /// <summary>
+    /// 玩家選了哪一個武器
+    /// </summary>
+    /// 武器編號
+
+    public void ChooseWeapon(int choose)
     {
         indexWeapon = choose;
     }
