@@ -200,6 +200,10 @@ public class Player : MonoBehaviour
     //開始事件：撥放後會執行一次
     private void Start()
     {
+        //給予玩家起始金幣
+        coin = 10;
+        textCoin.text = "金幣:" + coin;
+
         hpMax = hp;                                   //取得血量最大值
         //利用公式寫入經驗值資料,一等100,兩等200....
         for (int i = 0; i <99; i++)

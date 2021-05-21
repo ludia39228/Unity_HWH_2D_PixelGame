@@ -5078,7 +5078,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1309114293}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1979081292}
+        m_MethodName: Buy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1309114293
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26580,12 +26591,12 @@ PrefabInstance:
     - target: {fileID: 3502557894757412416, guid: ffcfe71352ee84f4cbc0ef1ffe07e3ef,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.664339
+      value: -3.37
       objectReference: {fileID: 0}
     - target: {fileID: 3502557894757412416, guid: ffcfe71352ee84f4cbc0ef1ffe07e3ef,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.815338
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 3502557894757412416, guid: ffcfe71352ee84f4cbc0ef1ffe07e3ef,
         type: 3}
@@ -27106,6 +27117,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 998234207}
     m_Modifications:
+    - target: {fileID: 3179160300363533293, guid: ffcfe71352ee84f4cbc0ef1ffe07e3ef,
+        type: 3}
+      propertyPath: percent
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3502557894757412416, guid: ffcfe71352ee84f4cbc0ef1ffe07e3ef,
         type: 3}
       propertyPath: m_LocalPosition.x
