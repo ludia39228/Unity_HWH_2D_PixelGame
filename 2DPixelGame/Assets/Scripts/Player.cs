@@ -48,6 +48,7 @@ public class Player : MonoBehaviour
     private bool isDead = false;
     private float hpMax;
     public int coin;
+    public float attackWeapon;
 
     //事件：繪製圖示
     private void OnDrawGizmos()
@@ -97,7 +98,7 @@ public class Player : MonoBehaviour
         //如果 碰到物件存在 並且 碰到的物件 標籤 為道具 就取得道具腳本並呼叫掉落道具方法
         if (hit && hit.collider.tag == "道具") hit.collider.GetComponent<Item>().DropProp();
         //如果 打到的標籤是敵人 就對他造成傷害
-        if (hit && hit.collider.tag == "敵人") hit.collider.GetComponent<Enemy>().Hit(attack);
+        if (hit && hit.collider.tag == "敵人") hit.collider.GetComponent<Enemy>().Hit(attack + attackWeapon);
         //如果 打到的標籤是NPC 就開啟商店
         if (hit && hit.collider.tag == "NPC") hit.collider.GetComponent<NPC>().OpenShop();
 

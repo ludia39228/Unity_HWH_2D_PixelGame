@@ -17,6 +17,7 @@ public class NPC : MonoBehaviour
     /// 武器的價格、編號與選取武器相同
     /// </summary>
     private int[] priceWeapon = { 1, 2, 3 };
+    private float[] attackWeapon = { 10, 100, 85};
 
     /// <summary>
     /// 玩家身上的物件 編號與選取武器相同
@@ -69,6 +70,15 @@ public class NPC : MonoBehaviour
         {
             player.coin -= priceWeapon[indexWeapon];
             player.textCoin.text = "金幣:" + player.coin;
+
+            //將目前購買的武器攻擊力給玩家
+            player.attackWeapon = attackWeapon[indexWeapon];
+
+            //顯示武器前關閉所有武器
+            for(int i =0;i<objWeapon.Length;i++)
+            {
+                objWeapon[i].SetActive(false);
+            }
             objWeapon[indexWeapon].SetActive(true);
         }
     }
