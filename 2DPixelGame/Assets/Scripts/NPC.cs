@@ -18,6 +18,11 @@ public class NPC : MonoBehaviour
     /// </summary>
     private int[] priceWeapon = { 1, 2, 3 };
 
+    /// <summary>
+    /// 玩家身上的物件 編號與選取武器相同
+    /// </summary>
+    public GameObject[] objWeapon;
+
     private Player player;
 
     private void Start()
@@ -64,6 +69,7 @@ public class NPC : MonoBehaviour
         {
             player.coin -= priceWeapon[indexWeapon];
             player.textCoin.text = "金幣:" + player.coin;
+            objWeapon[indexWeapon].SetActive(true);
         }
     }
 
