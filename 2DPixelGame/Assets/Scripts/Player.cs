@@ -98,6 +98,8 @@ public class Player : MonoBehaviour
         if (hit && hit.collider.tag == "道具") hit.collider.GetComponent<Item>().DropProp();
         //如果 打到的標籤是敵人 就對他造成傷害
         if (hit && hit.collider.tag == "敵人") hit.collider.GetComponent<Enemy>().Hit(attack);
+        //如果 打到的標籤是NPC 就開啟商店
+        if (hit && hit.collider.tag == "NPC") hit.collider.GetComponent<NPC>().OpenShop();
 
     }
 
