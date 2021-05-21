@@ -7,20 +7,21 @@ public class NPC : MonoBehaviour
 
     /// <summary>
     /// 開啟商店介面
-    /// </summary> 
-    public void OpenShop();
+    /// </summary>
+
+    public void OpenShop()
     {
         objShop.SetActive(true);
     }
-/// <summary>
-/// 關閉商店介面
-/// </summary>
-  public void CloseShop();
-  {
-    objShop.SetActive(false);
-}
+
+    /// <summary>
+    /// 關閉商店介面
+    /// </summary>
+
+    public void CloseShop()
+    {
+        objShop.SetActive(false);
+    }
 
 
 }
-    
-
