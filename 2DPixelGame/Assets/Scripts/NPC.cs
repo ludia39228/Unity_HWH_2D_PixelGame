@@ -6,6 +6,14 @@ public class NPC : MonoBehaviour
     public GameObject objShop;
 
     /// <summary>
+    /// 玩家選取的武器
+    /// 0 短刀
+    /// 1戰斧
+    /// 2匕首
+    ///</summary>
+    public int indexWeapon;
+
+    /// <summary>
     /// 開啟商店介面
     /// </summary>
 
@@ -21,6 +29,13 @@ public class NPC : MonoBehaviour
     public void CloseShop()
     {
         objShop.SetActive(false);
+    }
+
+
+    ///玩家選了哪一個武器
+   public void ChooseWeapon(int choose)
+    {
+        indexWeapon = choose;
     }
 
 
