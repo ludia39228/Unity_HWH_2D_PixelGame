@@ -47,7 +47,7 @@ public class Player : MonoBehaviour
 
     private bool isDead = false;
     private float hpMax;
-    private int coin;
+    public int coin;
 
     //事件：繪製圖示
     private void OnDrawGizmos()
